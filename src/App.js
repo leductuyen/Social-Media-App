@@ -1,11 +1,7 @@
-import ConfigRouter from './containers/router'
 import React from 'react'
+import { ConfigRouter } from './containers/router'
 function App() {
-    return (
-        <div className="App">
-            <ConfigRouter />
-        </div>
-    )
+    return <ConfigRouter />
 }
 
 export default App
