@@ -1,11 +1,21 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../context/authContext'
 import './Login.scss'
+import Input from '../../components/common/Input'
+import { formInput_Login, initialValue } from './Config'
 const Login = () => {
     //! State
+
     const { login } = useContext(AuthContext)
+
+    const [formValues, setFormValues] = useState(initialValue)
+
     //! Function
+    const handleChange = (e) => {
+        const { name, value } = e.target
+        setFormValues({ ...formValues, [name]: value })
+    }
     const handleLogin = () => {
         login()
     }
@@ -26,9 +36,18 @@ const Login = () => {
                 </div>
                 <div className="right">
                     <h1>Login</h1>
+
                     <form>
-                        <input type="text" placeholder="Username" />
-                        <input type="password" placeholder="Password" />
+                        <Input
+                            onChange={handleChange}
+                            value={formValues.login_name}
+                            {...formInput_Login.login_name.attrs}
+                        />
+                        <Input
+                            onChange={handleChange}
+                            value={formValues.login_password}
+                            {...formInput_Login.login_password.attrs}
+                        />
                         <button onClick={handleLogin}>Login</button>
                     </form>
                 </div>

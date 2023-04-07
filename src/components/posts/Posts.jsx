@@ -1,4 +1,4 @@
-import Post from '../common/post/Post'
+import Post from '../common/Post'
 import './Posts.scss'
 import React from 'react'
 const Posts = () => {

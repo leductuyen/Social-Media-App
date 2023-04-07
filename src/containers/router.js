@@ -1,12 +1,11 @@
 import React, { useContext } from 'react'
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
-import Login from '../pages/Login/Login'
-import Register from '../pages/Register/Register'
-import Home from '../pages/Home/Home'
-import Layout from './Layout/Layout'
-import Profile from '../pages/Profile/Profile'
 import { AuthContext } from '../context/authContext'
-
+import Home from '../pages/Home/Home'
+import Login from '../pages/Login/Login'
+import Profile from '../pages/Profile/Profile'
+import Register from '../pages/Register/Register'
+import Layout from './Layout/Layout'
 const ProtectedRoute = ({ children }) => {
     const { currentUser } = useContext(AuthContext)
 

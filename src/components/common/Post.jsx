@@ -5,8 +5,8 @@ import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined'
 import TextsmsOutlinedIcon from '@mui/icons-material/TextsmsOutlined'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import Comments from '../../comments/Comments'
-import './Post.scss'
+import Comments from '../comments/Comments'
+import './scss/Post.scss'
 
 const Post = ({ post }) => {
     const [commentOpen, setCommentOpen] = useState(false)
