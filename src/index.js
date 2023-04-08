@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-
+import { Provider } from 'react-redux'
+import { store } from './app/store'
 import App from './App'
 import { AuthProvider } from './context/authContext'
 import { DarkModeProvider } from './context/darkModeContext'
@@ -9,11 +10,13 @@ import reportWebVitals from './reportWebVitals'
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
     <React.StrictMode>
-        <DarkModeProvider>
-            <AuthProvider>
-                <App />
-            </AuthProvider>
-        </DarkModeProvider>
+        <Provider store={store}>
+            <DarkModeProvider>
+                <AuthProvider>
+                    <App />
+                </AuthProvider>
+            </DarkModeProvider>
+        </Provider>
     </React.StrictMode>,
 )
 
