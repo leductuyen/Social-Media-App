@@ -1,9 +1,15 @@
 import React, { useRef } from 'react'
+import './scss/Input.scss'
 
-const Input = ({ className, ...rest }) => {
+const Input = ({ className, error, ...rest }) => {
     const inputRef = useRef(null)
 
-    return <input className={className} type="text" ref={inputRef} {...rest} />
+    return (
+        <div className={`input-wrapper ${className}`}>
+            <input className="input" type="text" ref={inputRef} {...rest} />
+            {error && <span className="error-message">{error}</span>}
+        </div>
+    )
 }
 
 export default Input

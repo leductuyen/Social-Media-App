@@ -1,0 +1,20 @@
+.input-wrapper {
+    position: relative;
+    margin-bottom: 1rem; /* Khoảng cách giữa input và error message */
+}
+
+.input {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+}
+
+.error-message {
+    position: absolute;
+    bottom: -1.5rem; /* Khoảng cách giữa error message và input */
+    left: 0;
+    font-size: 0.75rem;
+    color: red;
+}
